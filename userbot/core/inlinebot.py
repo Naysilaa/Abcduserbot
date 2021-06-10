@@ -51,8 +51,8 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁 𝗛𝗲𝗹𝗽𝗲𝗿\
-        \n𝗣𝗿𝗼𝘃𝗶𝗱𝗲𝗱 𝗯𝘆 {mention}"
+    text = f"𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁 𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗛𝗲𝗹𝗽𝗲𝗿\
+        \n𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 {mention}"
     buttons = [
         (
             Button.inline(
@@ -196,7 +196,7 @@ def paginate_help(
             ] + [
                 (
                     Button.inline(
-                        "⌫",
+                        "◀",
                         data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                     ),
                     Button.inline(
@@ -204,7 +204,7 @@ def paginate_help(
                         data=f"back_plugin_{category_plugins}_{category_pgno}",
                     ),
                     Button.inline(
-                        "⌦",
+                        "▶",
                         data=f"{prefix}_next({modulo_page})_command_{category_plugins}_{category_pgno}",
                     ),
                 )
@@ -238,7 +238,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/sandy1709/catuserbot"),
+                    Button.url("Repo", "https://github.com/IlhamMansiez/PETERCORDBOT"),
                 )
             ]
             CAT_IMG = Config.ALIVE_PIC or None
@@ -348,8 +348,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© CatUserbot Help",
-                description="Help menu for CatUserbot",
+                title="© PetercordUserbot Help",
+                description="Help menu for PetercordUserbot",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -418,7 +418,7 @@ async def inline_handler(event):  # sourcery no-metrics
             ]
             markup = event.client.build_reply_markup(buttons)
             photo = types.InputWebDocument(
-                url="https://i.imgur.com/Zg58iXc.jpg",
+                url="https://imgur.com/gallery/ieSTXbM",
                 size=0,
                 mime_type="image/jpeg",
                 attributes=[],
@@ -467,10 +467,10 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/sandy1709/catuserbot"),
+                Button.url("Source code", "https://github.com/IlhamMansiez/THE-PETERCORD"),
                 Button.url(
                     "Deploy",
-                    "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack&template=https%3A%2F%2Fgithub.com%2FMr-confused%2Fcatpack",
+                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PETERCORDBOT",
                 ),
             )
         ]
@@ -479,14 +479,14 @@ async def inline_handler(event):  # sourcery no-metrics
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗖𝗮𝘁𝗨𝘀𝗲𝗿𝗯𝗼𝘁.", "md"
+            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="𝘾𝙖𝙩𝙐𝙨𝙚𝙧𝙗𝙤𝙩",
+            title="𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁",
             description="Deploy yourself",
-            url="https://github.com/sandy1709/catuserbot",
+            url="https://github.com/IlhamMansiez/THE-PETERCORD",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
