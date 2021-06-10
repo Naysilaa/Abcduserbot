@@ -51,7 +51,7 @@ def ibuild_keyboard(buttons):
 
 
 def main_menu():
-    text = f"𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁 𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗛𝗲𝗹𝗽𝗲𝗿\
+    text = f"𝗔𝗯𝗰𝗱𝘂𝘀𝗲𝗿𝗯𝗼𝘁 𝗦𝗲𝗹𝗮𝗺𝗮𝘁 𝗗𝗮𝘁𝗮𝗻𝗴 𝗛𝗲𝗹𝗽𝗲𝗿\
         \n𝗣𝗘𝗡𝗚𝗚𝗨𝗡𝗔 {mention}"
     buttons = [
         (
@@ -183,12 +183,12 @@ def paginate_help(
             ] + [
                 (
                     Button.inline("⌫", data=f"{prefix}_prev({modulo_page})_plugin"),
-                    Button.inline("⚙️ Main Menu", data="mainmenu"),
+                    Button.inline("⚙️ Menu Utama", data="mainmenu"),
                     Button.inline("⌦", data=f"{prefix}_next({modulo_page})_plugin"),
                 )
             ]
         else:
-            pairs = pairs + [(Button.inline("⚙️ Main Menu", data="mainmenu"),)]
+            pairs = pairs + [(Button.inline("⚙️ Menu Utama", data="mainmenu"),)]
     else:
         if len(pairs) > number_of_rows:
             pairs = pairs[
@@ -200,7 +200,7 @@ def paginate_help(
                         data=f"{prefix}_prev({modulo_page})_command_{category_plugins}_{category_pgno}",
                     ),
                     Button.inline(
-                        "⬅️ Back ",
+                        "⬅️ Kembali ",
                         data=f"back_plugin_{category_plugins}_{category_pgno}",
                     ),
                     Button.inline(
@@ -213,7 +213,7 @@ def paginate_help(
             pairs = pairs + [
                 (
                     Button.inline(
-                        "⬅️ Back ",
+                        "⬅️ Kembali ",
                         data=f"back_plugin_{category_plugins}_{category_pgno}",
                     ),
                 )
@@ -238,7 +238,7 @@ async def inline_handler(event):  # sourcery no-metrics
             buttons = [
                 (
                     Button.inline("Stats", data="stats"),
-                    Button.url("Repo", "https://github.com/IlhamMansiez/PETERCORDBOT"),
+                    Button.url("Repo", "https://github.com/Naysilaa/Abcduserbot"),
                 )
             ]
             CAT_IMG = Config.ALIVE_PIC or None
@@ -348,8 +348,8 @@ async def inline_handler(event):  # sourcery no-metrics
         elif string == "help":
             _result = main_menu()
             result = builder.article(
-                title="© PetercordUserbot Help",
-                description="Help menu for PetercordUserbot",
+                title="© AbcdUserbot Help",
+                description="Help menu for AbcdUserbot",
                 text=_result[0],
                 buttons=_result[1],
                 link_preview=False,
@@ -467,10 +467,10 @@ async def inline_handler(event):  # sourcery no-metrics
     else:
         buttons = [
             (
-                Button.url("Source code", "https://github.com/IlhamMansiez/THE-PETERCORD"),
+                Button.url("Source code", "https://github.com/Naysilaa/Abcduserbot"),
                 Button.url(
                     "Deploy",
-                    "https://heroku.com/deploy?template=https://github.com/IlhamMansiez/PETERCORDBOT",
+                    "https://heroku.com/deploy?template=https://github.com/Naysilaa/Abcduserbot",
                 ),
             )
         ]
@@ -479,14 +479,14 @@ async def inline_handler(event):  # sourcery no-metrics
             url=CATLOGO, size=0, mime_type="image/jpeg", attributes=[]
         )
         text, msg_entities = await event.client._parse_message_text(
-            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁.", "md"
+            "𝗗𝗲𝗽𝗹𝗼𝘆 𝘆𝗼𝘂𝗿 𝗼𝘄𝗻 𝗔𝗯𝗰𝗱𝘂𝘀𝗲𝗿𝗯𝗼𝘁.", "md"
         )
         result = types.InputBotInlineResult(
             id=str(uuid4()),
             type="photo",
-            title="𝗣𝗲𝘁𝗲𝗿𝗰𝗼𝗿𝗱𝗕𝗼𝘁",
+            title="𝗔𝗯𝗰𝗱𝘂𝘀𝗲𝗿𝗯𝗼𝘁",
             description="Deploy yourself",
-            url="https://github.com/IlhamMansiez/THE-PETERCORD",
+            url="https://github.com/Naysilaa/Abcduserbot",
             thumb=photo,
             content=photo,
             send_message=types.InputBotInlineMessageMediaAuto(
